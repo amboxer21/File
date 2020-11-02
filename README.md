@@ -57,11 +57,11 @@ anthony@gentoo ~ $
 
 ```
 anthony@gentoo ~ $ time sudo ruby -e "require 'fileopts'; puts FileOpts.size('/var/log/messages')"
-556660
+598604
     
-real	0m0.064s
-user	0m0.056s
-sys	0m0.008s
+real	0m0.039s
+user	0m0.035s
+sys	0m0.004s
 anthony@gentoo ~ $ time sudo ./filesize 
 557018
 
