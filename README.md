@@ -6,60 +6,59 @@ A ruby Gem written in the C programming language using Ruby's C programming API.
 
 > Step 1
 ```
-anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $ ruby extconf.rb 
+anthony@gentoo ~ $ ruby extconf.rb 
 creating Makefile
-anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $
+anthony@gentoo ~ $
 ```
 
 > Step 2
 ```
-anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $ make
+anthony@gentoo ~ $ make
 compiling file_size.c
 linking shared-object filesize.so
-anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $
+anthony@gentoo ~ $
 ```
 
 > Step 3
 ```
-anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $ sudo make install
+anthony@gentoo ~ $ sudo make install
 Password: 
 /usr/bin/install -c -m 0755 filesize.so /usr/lib64/ruby/site_ruby/2.5.0/x86_64-linux
-anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $
+anthony@gentoo ~ $
 ```
 
 [**USAGE**]
 
 ```
-anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $ sudo /usr/bin/irb
+anthony@gentoo ~ $ sudo irb
 irb(main):001:0> require 'filesize'
 => true
-irb(main):002:0> include FileSize
-=> Object
-irb(main):003:0> file_size('/var/log/messages')
-=> 567895
-irb(main):004:0>
+irb(main):002:0> FileSize.size('/var/log/messages')
+=> 578797
+irb(main):003:0> exit
+anthony@gentoo ~ $
 ```
 
 [**BENCHMARKS**]
 
 ```
-anthony@localhost ~ $ time sudo ruby -e "require 'filesize'; include FileSize; puts file_size('/var/log/messages')"
+anthony@gentoo ~ $ time sudo ruby -e "require 'filesize'; puts FileSize.size('/var/log/messages')"
 556660
     
 real	0m0.064s
 user	0m0.056s
 sys	0m0.008s
-anthony@localhost ~ $ time sudo ./filesize 
+anthony@gentoo ~ $ time sudo ./filesize 
 557018
 
 real	0m0.006s
 user	0m0.002s
 sys	0m0.004s
-anthony@localhost ~ $ time ls -al /var/log/messages | awk '{print $5}'
+anthony@gentoo ~ $ time ls -al /var/log/messages | awk '{print $5}'
 557110
     
 real	0m0.003s
 user	0m0.000s
 sys	0m0.004s
-anthony@localhost ~ $ 
+anthony@gentoo ~ $ 
 ```
