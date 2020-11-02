@@ -1,4 +1,4 @@
-# filesize Gem
+# fileopts Gem
 A ruby Gem written in the C programming language using Ruby's C programming API. A fast way to find out the size of a file.
 
 [**METHODS**]
@@ -47,7 +47,9 @@ irb(main):004:0> FileOpts.m_time('/var/log/messages')
 => "Mon Nov  2 17:31:49 2020\n"
 irb(main):005:0> FileOpts.a_time('/var/log/messages')
 => "Sat Oct 17 16:21:35 2020\n"
-irb(main):006:0> exit
+irb(main):006:0> FileOpts.empty('/var/log/messages')
+=> false
+irb(main):007:0> exit
 anthony@gentoo ~ $
 ```
 
