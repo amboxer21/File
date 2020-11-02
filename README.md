@@ -43,7 +43,7 @@ irb(main):004:0>
 [**BENCHMARKS**]
 
 ```
-anthony@localhost ~ $ time sudo ruby -e "require('./logfilesize'); include LogFileSize; puts log_file_size('/var/log/messages')"
+anthony@localhost ~ $ time sudo ruby -e "require 'logfilesize'; include LogFileSize; puts log_file_size('/var/log/messages')"
 556660
     
 real	0m0.064s
