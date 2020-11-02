@@ -1,3 +1,3 @@
 require 'mkmf'
 
-create_makefile('logfilesize')
+create_makefile('filesize')
