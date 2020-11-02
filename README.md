@@ -1,6 +1,12 @@
 # filesize Gem
 A ruby Gem written in the C programming language using Ruby's C programming API. A fast way to find out the size of a file.
 
+[**METHODS**]
+* size
+* mtime
+* ctime
+* atime
+* More to come!
 
 [**BUILD**]
 
