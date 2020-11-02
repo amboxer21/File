@@ -1,18 +1,18 @@
 #include "ruby.h"
 #include <stdio.h> 
 
-VALUE LogFileSize = Qnil;
+VALUE FileSize = Qnil;
 
-void Init_logfilesize();
+void Init_filesize();
 
-VALUE method_log_file_size(VALUE self, VALUE filename);
+VALUE method_file_size(VALUE self, VALUE filename);
 
-void Init_logfilesize(void) {
-	  LogFileSize = rb_define_module("LogFileSize");
-	  rb_define_method(LogFileSize, "log_file_size", method_log_file_size, 1);
+void Init_filesize(void) {
+	  FileSize = rb_define_module("FileSize");
+	  rb_define_method(FileSize, "file_size", method_file_size, 1);
 }
 
-VALUE method_log_file_size(VALUE self, VALUE filename) {
+VALUE method_file_size(VALUE self, VALUE filename) {
 
     FILE* fp = fopen(StringValueCStr(filename), "r"); 
 
