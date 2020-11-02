@@ -1,18 +1,7 @@
 #include "ruby.h"
 #include <stdio.h> 
 
-VALUE FileSize = Qnil;
-
-void Init_filesize();
-
-VALUE method_file_size(VALUE self, VALUE filename);
-
-void Init_filesize(void) {
-	  FileSize = rb_define_module("FileSize");
-	  rb_define_method(FileSize, "file_size", method_file_size, 1);
-}
-
-VALUE method_file_size(VALUE self, VALUE filename) {
+static VALUE size(VALUE self, VALUE filename) {
 
     FILE* fp = fopen(StringValueCStr(filename), "r"); 
 
@@ -28,4 +17,9 @@ VALUE method_file_size(VALUE self, VALUE filename) {
     fclose(fp); 
 
     return res; 
+}
+
+void Init_filesize(void) {
+  VALUE rb_class = rb_define_class("FileSize", rb_cObject);
+  rb_define_singleton_method(rb_class, "size", size, 1);
 }
