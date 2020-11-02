@@ -39,3 +39,27 @@ irb(main):003:0> log_file_size('/var/log/messages')
 => 567895
 irb(main):004:0>
 ```
+
+[**BENCHMARKS**]
+
+```
+anthony@localhost ~ $ time sudo ruby -e "require('./logfilesize'); include LogFileSize; puts log_file_size('/var/log/messages')"
+556660
+    
+real	0m0.064s
+user	0m0.056s
+sys	0m0.008s
+anthony@localhost ~ $ time sudo ./filesize 
+557018
+
+real	0m0.006s
+user	0m0.002s
+sys	0m0.004s
+anthony@localhost ~ $ time ls -al /var/log/messages | awk '{print $5}'
+557110
+    
+real	0m0.003s
+user	0m0.000s
+sys	0m0.004s
+anthony@localhost ~ $ 
+```
