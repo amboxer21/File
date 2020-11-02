@@ -14,8 +14,8 @@ anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $
 > Step 2
 ```
 anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $ make
-compiling log_file_size.c
-linking shared-object logfilesize.so
+compiling file_size.c
+linking shared-object filesize.so
 anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $
 ```
 
@@ -23,7 +23,7 @@ anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $
 ```
 anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $ sudo make install
 Password: 
-/usr/bin/install -c -m 0755 logfilesize.so /usr/lib64/ruby/site_ruby/2.5.0/x86_64-linux
+/usr/bin/install -c -m 0755 filesize.so /usr/lib64/ruby/site_ruby/2.5.0/x86_64-linux
 anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $
 ```
 
@@ -31,11 +31,11 @@ anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $
 
 ```
 anthony@localhost ~/Documents/Ruby/Fail2BanExtended/extensions $ sudo /usr/bin/irb
-irb(main):001:0> require 'logfilesize'
+irb(main):001:0> require 'filesize'
 => true
-irb(main):002:0> include LogFileSize
+irb(main):002:0> include FileSize
 => Object
-irb(main):003:0> log_file_size('/var/log/messages')
+irb(main):003:0> file_size('/var/log/messages')
 => 567895
 irb(main):004:0>
 ```
@@ -43,7 +43,7 @@ irb(main):004:0>
 [**BENCHMARKS**]
 
 ```
-anthony@localhost ~ $ time sudo ruby -e "require 'logfilesize'; include LogFileSize; puts log_file_size('/var/log/messages')"
+anthony@localhost ~ $ time sudo ruby -e "require 'filesize'; include FileSize; puts file_size('/var/log/messages')"
 556660
     
 real	0m0.064s
