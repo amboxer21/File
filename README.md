@@ -63,16 +63,16 @@ real	0m0.039s
 user	0m0.035s
 sys	0m0.004s
 anthony@gentoo ~ $ time sudo ./filesize 
-557018
+599258
 
-real	0m0.006s
-user	0m0.002s
-sys	0m0.004s
+real	0m0.005s
+user	0m0.003s
+sys	0m0.002s
 anthony@gentoo ~ $ time ls -al /var/log/messages | awk '{print $5}'
-557110
-    
-real	0m0.003s
-user	0m0.000s
-sys	0m0.004s
+599350
+
+real	0m0.002s
+user	0m0.003s
+sys	0m0.000s
 anthony@gentoo ~ $ 
 ```
