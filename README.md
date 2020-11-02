@@ -6,7 +6,7 @@ A ruby Gem written in the C programming language using Ruby's C programming API.
 * mtime
 * ctime
 * atime
-* More to come!
+* empty
 
 [**BUILD**]
 
