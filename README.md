@@ -76,3 +76,17 @@ user	0m0.003s
 sys	0m0.000s
 anthony@gentoo ~ $ 
 ```
+
+vs 
+
+**Ruby's built in library**
+
+```
+anthony@gentoo ~ $ time sudo ruby -e "puts File.new('/var/log/messages');"
+#<File:0x000055a2a7fb3778>
+
+real	0m0.041s
+user	0m0.035s
+sys	0m0.006s
+anthony@gentoo ~ $
+```
