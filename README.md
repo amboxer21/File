@@ -1,6 +1,12 @@
-# filesize Gem
+# fileopts Gem
 A ruby Gem written in the C programming language using Ruby's C programming API. A fast way to find out the size of a file.
 
+[**METHODS**]
+* size
+* mtime
+* ctime
+* atime
+* More to come!
 
 [**BUILD**]
 
@@ -14,8 +20,8 @@ anthony@gentoo ~ $
 > Step 2
 ```
 anthony@gentoo ~ $ make
-compiling file_size.c
-linking shared-object filesize.so
+compiling fileopts.c
+linking shared-object fileopts.so
 anthony@gentoo ~ $
 ```
 
@@ -23,7 +29,7 @@ anthony@gentoo ~ $
 ```
 anthony@gentoo ~ $ sudo make install
 Password: 
-/usr/bin/install -c -m 0755 filesize.so /usr/lib64/ruby/site_ruby/2.5.0/x86_64-linux
+/usr/bin/install -c -m 0755 fileopts.so /usr/lib64/ruby/site_ruby/2.5.0/x86_64-linux
 anthony@gentoo ~ $
 ```
 
@@ -31,18 +37,26 @@ anthony@gentoo ~ $
 
 ```
 anthony@gentoo ~ $ sudo irb
-irb(main):001:0> require 'filesize'
+irb(main):001:0> require 'fileopts'
 => true
-irb(main):002:0> FileSize.size('/var/log/messages')
-=> 578797
-irb(main):003:0> exit
+irb(main):002:0> FileOpts.size('/var/log/messages')
+=> 595805
+irb(main):003:0> FileOpts.c_time('/var/log/messages')
+=> "Mon Nov  2 17:31:49 2020\n"
+irb(main):004:0> FileOpts.m_time('/var/log/messages')
+=> "Mon Nov  2 17:31:49 2020\n"
+irb(main):005:0> FileOpts.a_time('/var/log/messages')
+=> "Sat Oct 17 16:21:35 2020\n"
+irb(main):006:0> FileOpts.empty('/var/log/messages')
+=> false
+irb(main):007:0> exit
 anthony@gentoo ~ $
 ```
 
 [**BENCHMARKS**]
 
 ```
-anthony@gentoo ~ $ time sudo ruby -e "require 'filesize'; puts FileSize.size('/var/log/messages')"
+anthony@gentoo ~ $ time sudo ruby -e "require 'fileopts'; puts FileOpts.size('/var/log/messages')"
 556660
     
 real	0m0.064s
