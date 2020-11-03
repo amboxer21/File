@@ -1,5 +1,5 @@
 # File Gem
-A ruby Gem written in the C programming language using Ruby's C programming API. This is a version of the File class that uses singleton methods instead of instance methods.
+A ruby Gem written in the C programming language using Ruby's C programming API. I am writing this gem just for fun and learning purposes.
 
 [**METHODS**]
 * size
