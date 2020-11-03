@@ -1,5 +1,5 @@
 # fileopts Gem
-A ruby Gem written in the C programming language using Ruby's C programming API. A fast way to find out the size of a file.
+A ruby Gem written in the C programming language using Ruby's C programming API. This is a version of the File class that uses singleton methods.
 
 [**METHODS**]
 * size
