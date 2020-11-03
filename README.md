@@ -82,11 +82,11 @@ vs
 **Ruby's built in library**
 
 ```
-anthony@gentoo ~ $ time sudo ruby -e "puts File.new('/var/log/messages');"
-#<File:0x000055a2a7fb3778>
+anthony@localhost ~ $ time sudo ruby -e "puts File.read('/var/log/messages').size;"
+611951
 
-real	0m0.041s
-user	0m0.035s
-sys	0m0.006s
-anthony@gentoo ~ $
+real	0m0.069s
+user	0m0.062s
+sys	0m0.007s
+anthony@localhost ~ $
 ```
