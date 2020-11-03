@@ -1,3 +1,3 @@
 require 'mkmf'
 
-create_makefile('fileopts')
+create_makefile('file')

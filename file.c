@@ -65,8 +65,8 @@ static VALUE a_time(VALUE self, VALUE filename) {
     return rb_str_new2(ctime(&fstat.st_atime));
 }
 
-void Init_fileopts(void) {
-  VALUE rb_class = rb_define_class("FileOpts", rb_cObject);
+void Init_file(void) {
+  VALUE rb_class = rb_define_class("File", rb_cObject);
   rb_define_singleton_method(rb_class, "size", size, 1);
   rb_define_singleton_method(rb_class, "empty", empty, 1);
   rb_define_singleton_method(rb_class, "a_time", a_time, 1);
