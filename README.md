@@ -57,23 +57,23 @@ anthony@gentoo ~ $
 
 ```
 anthony@gentoo ~ $ time sudo ruby -e "require 'fileopts'; puts FileOpts.size('/var/log/messages')"
-598604
-    
-real	0m0.039s
-user	0m0.035s
-sys	0m0.004s
+612369
+
+real	0m0.066s
+user	0m0.058s
+sys	0m0.008s
 anthony@gentoo ~ $ time sudo ./filesize 
-599258
+612696
 
-real	0m0.005s
+real	0m0.006s
 user	0m0.003s
-sys	0m0.002s
+sys	0m0.003s
 anthony@gentoo ~ $ time ls -al /var/log/messages | awk '{print $5}'
-599350
+612788
 
-real	0m0.002s
-user	0m0.003s
-sys	0m0.000s
+real	0m0.003s
+user	0m0.002s
+sys	0m0.003s
 anthony@gentoo ~ $ 
 ```
 
