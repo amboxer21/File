@@ -6,7 +6,7 @@ A ruby Gem written in the C programming language using Ruby's C programming API.
 * mtime
 * ctime
 * atime
-* More to come!
+* empty
 
 [**BUILD**]
 
@@ -55,24 +55,38 @@ anthony@gentoo ~ $
 
 [**BENCHMARKS**]
 
+**My fileopts gem**
+
 ```
 anthony@gentoo ~ $ time sudo ruby -e "require 'fileopts'; puts FileOpts.size('/var/log/messages')"
-556660
-    
-real	0m0.064s
-user	0m0.056s
+612369
+
+real	0m0.066s
+user	0m0.058s
 sys	0m0.008s
 anthony@gentoo ~ $ time sudo ./filesize 
-557018
+612696
 
 real	0m0.006s
-user	0m0.002s
-sys	0m0.004s
+user	0m0.003s
+sys	0m0.003s
 anthony@gentoo ~ $ time ls -al /var/log/messages | awk '{print $5}'
-557110
-    
+612788
+
 real	0m0.003s
-user	0m0.000s
-sys	0m0.004s
+user	0m0.002s
+sys	0m0.003s
 anthony@gentoo ~ $ 
+``` 
+
+**Ruby's built in library**
+
+```
+anthony@localhost ~ $ time sudo ruby -e "puts File.read('/var/log/messages').size;"
+611951
+
+real	0m0.069s
+user	0m0.062s
+sys	0m0.007s
+anthony@localhost ~ $
 ```
