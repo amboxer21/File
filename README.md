@@ -55,6 +55,8 @@ anthony@gentoo ~ $
 
 [**BENCHMARKS**]
 
+**My fileopts gem**
+
 ```
 anthony@gentoo ~ $ time sudo ruby -e "require 'fileopts'; puts FileOpts.size('/var/log/messages')"
 612369
@@ -75,9 +77,7 @@ real	0m0.003s
 user	0m0.002s
 sys	0m0.003s
 anthony@gentoo ~ $ 
-```
-
-vs 
+``` 
 
 **Ruby's built in library**
 
