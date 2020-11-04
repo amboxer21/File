@@ -38,9 +38,32 @@ anthony@gentoo ~ $
 
 [**USAGE**]
 
+**Regular require**
+
 ```
 anthony@gentoo ~ $ sudo irb
 irb(main):001:0> require 'file'
+=> true
+irb(main):002:0> File.size('/var/log/messages')
+=> 595805
+irb(main):003:0> File.c_time('/var/log/messages')
+=> "Mon Nov  2 17:31:49 2020\n"
+irb(main):004:0> File.m_time('/var/log/messages')
+=> "Mon Nov  2 17:31:49 2020\n"
+irb(main):005:0> File.a_time('/var/log/messages')
+=> "Sat Oct 17 16:21:35 2020\n"
+irb(main):006:0> File.empty('/var/log/messages')
+=> false
+irb(main):007:0> exit
+anthony@gentoo ~ $
+```
+
+**Local require**
+
+> Assuming the shared object(.so file) is in the same directory that you're running your script from or using irb from. 
+```
+anthony@gentoo ~ $ sudo irb
+irb(main):001:0> require('./file')
 => true
 irb(main):002:0> File.size('/var/log/messages')
 => 595805
