@@ -26,6 +26,9 @@ anthony@gentoo ~ $
 ```
 
 > Step 3
+
+**IMPORTANT!!** Running `sudo make install` will install this gem in your gem path. The name of this gem could cause naming conflicts. Using this gem locally is a much safer option!
+
 ```
 anthony@gentoo ~ $ sudo make install
 Password: 
